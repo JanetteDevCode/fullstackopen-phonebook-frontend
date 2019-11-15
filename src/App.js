@@ -138,7 +138,7 @@ const App = () => {
       );
       return;
     }
-    if (existingPerson && phone === existingPerson.number) {
+    if (existingPerson && phone === existingPerson.phone) {
       displayNotification(
         NotificationType.ERROR,
         `${name} is already in the phonebook.`
@@ -150,7 +150,7 @@ const App = () => {
       if (confirmUpdate) {
         const editedPerson = {
           ...existingPerson,
-          number: phone
+          phone: phone
         };
         updatePerson(editedPerson);
       } else {
@@ -162,7 +162,7 @@ const App = () => {
     } else {
       const newPerson = {
         name: name,
-        number: phone
+        phone: phone
       };
       addPerson(newPerson);
     }

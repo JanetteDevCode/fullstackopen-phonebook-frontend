@@ -2,57 +2,57 @@
   "persons": [
     {
       "name": "Arto Hellas",
-      "number": "040-123456",
+      "phone": "040-123456",
       "id": 1
     },
     {
       "name": "Ada Lovelace",
-      "number": "39-44-5323523",
+      "phone": "39-44-5323523",
       "id": 2
     },
     {
       "name": "Dan Abramov",
-      "number": "12-43-234345",
+      "phone": "12-43-234345",
       "id": 3
     },
     {
       "name": "Mary Poppendieck",
-      "number": "39-23-6423122",
+      "phone": "39-23-6423122",
       "id": 4
     },
     {
       "name": "Cora Day",
-      "number": "555-4545",
+      "phone": "555-4545",
       "id": 7
     },
     {
       "name": "Arlo Dee",
-      "number": "144-7886",
+      "phone": "144-7886",
       "id": 8
     },
     {
       "name": "Dana Fine",
-      "number": "114-7878",
+      "phone": "114-7878",
       "id": 9
     },
     {
       "name": "Zora Style",
-      "number": "243-5961",
+      "phone": "243-5961",
       "id": 10
     },
     {
       "name": "Jonah Wier",
-      "number": "455-8887",
+      "phone": "455-8887",
       "id": 14
     },
     {
       "name": "Missy Lowe",
-      "number": "256-889-7545",
+      "phone": "256-889-7545",
       "id": 15
     },
     {
       "name": "Zora Day",
-      "number": "555-4546",
+      "phone": "555-4546",
       "id": 16
     }
   ]
