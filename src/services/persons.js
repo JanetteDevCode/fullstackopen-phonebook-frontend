@@ -11,6 +11,10 @@ const getAll = () => {
         console.log('response data', response.data);
         return response.data;
       })
+      .catch((err) => {
+        console.log('err response:', err.response);
+        return Promise.reject(err.response);
+      })
   );
 };
 
@@ -22,6 +26,10 @@ const createPerson = (newPerson) => {
         console.log('create person successful');
         console.log('response data', response.data);
         return response.data;
+      })
+      .catch((err) => {
+        console.log('err response:', err.response);
+        return Promise.reject(err.response);
       })
   );
 };
@@ -35,6 +43,10 @@ const updatePerson = (editedPerson) => {
         console.log('response data', response.data);
         return response.data;
       })
+      .catch((err) => {
+        console.log('err response:', err.response);
+        return Promise.reject(err.response);
+      })
   );
 }
 
@@ -46,6 +58,10 @@ const deletePerson = (removablePerson) => {
         console.log('delete person successful');
         console.log('response data', response.data);
         return response.data;
+      })
+      .catch((err) => {
+        console.log('err response:', err.response);
+        return Promise.reject(err.response);
       })
   );
 };

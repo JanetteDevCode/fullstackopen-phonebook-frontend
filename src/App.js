@@ -64,9 +64,13 @@ const App = () => {
       })
       .catch((error) => {
         console.log('add person error:', error);
+        let errorMessage = `${personToAdd.name} could not be added to the server.`;
+        if (error.data.error) {
+          errorMessage += ` ${error.data.error}`;
+        }
         displayNotification(
           NotificationType.ERROR,
-          `${personToAdd.name} could not be added to the server.`
+          errorMessage
         )
       });
   }
@@ -85,12 +89,21 @@ const App = () => {
       })
       .catch((error) => {
         console.log('update person error:', error);
-        setPersons(persons.filter((person) => {
-          return personToUpdate.id !== person.id;
-        }));
+        let errorMessage = '';
+        if (error.status === 404) {
+          setPersons(persons.filter((person) => {
+            return personToUpdate.id !== person.id;
+          }));
+          errorMessage += `${personToUpdate.name} could not be updated since the person does not exist on the server.`;
+        } else {
+          errorMessage += `${personToUpdate.name} could not be updated.`
+          if (error.data.error) {
+            errorMessage += ` ${error.data.error}`;
+          }
+        }
         displayNotification(
           NotificationType.ERROR,
-          `${personToUpdate.name} could not be updated since the person does not exist on the server.`
+          errorMessage
         );
       });
   };
@@ -109,12 +122,21 @@ const App = () => {
       })
       .catch((error) => {
         console.log('delete person error:', error);
-        setPersons(persons.filter((person) => {
-          return personToDelete.id !== person.id;
-        }));
+        let errorMessage = '';
+        if (error.status === 404) {
+          setPersons(persons.filter((person) => {
+            return personToDelete.id !== person.id;
+          }));
+          errorMessage += `${personToDelete.name} was already deleted from the server.`;
+        } else {
+          errorMessage += `${personToDelete.name} could not be deleted.`;
+          if (error.data.error) {
+            errorMessage += ` ${error.data.error}`;
+          }
+        }
         displayNotification(
           NotificationType.ERROR,
-          `${personToDelete.name} was already deleted from the server.`
+          errorMessage
         );
       });
   };
